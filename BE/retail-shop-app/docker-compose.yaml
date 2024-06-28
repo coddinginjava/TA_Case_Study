@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+
+  db:
+    image: postgres:16.2-alpine3.19
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD : root
+      POSTGRES_USER: root
+      POSTGRES_DB: mydb
+
+  redis-cache:
+    image: redis/redis-stack:latest
+    ports:
+      - 6379:6379
+      - 8001:8001
