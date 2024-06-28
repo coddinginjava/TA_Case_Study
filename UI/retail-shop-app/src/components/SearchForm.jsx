@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { searchPricingRecords } from '../redux/slices/pricingSlice';
 import { Input, Button, Stack } from '@chakra-ui/react';
@@ -10,6 +10,10 @@ const SearchForm = () => {
   const handleSearch = () => {
     dispatch(searchPricingRecords(searchTerm));
   };
+
+  useEffect(() => {
+    dispatch(searchPricingRecords(searchTerm));
+  }, [])
 
   return (
     <Stack direction="row" spacing={4} align="center">
