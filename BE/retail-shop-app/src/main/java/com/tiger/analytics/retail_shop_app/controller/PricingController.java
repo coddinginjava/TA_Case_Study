@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/retail-shop")
 @AllArgsConstructor
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:5173")
 public class PricingController {
 
     private PricingService pricingService;
@@ -31,7 +31,7 @@ public class PricingController {
         return pricingService.searchPricingRecords(search);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/pricing/{id}")
     public void deletePricingRecord(@PathVariable Long id) {
         pricingService.deletePricingRecord(id);
     }

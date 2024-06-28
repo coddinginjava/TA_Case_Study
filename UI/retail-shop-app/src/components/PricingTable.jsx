@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Table, Thead, Tbody, Tr, Th, Td, Button, TableContainer } from '@chakra-ui/react';
-import { selectPricingRecords, setSelectedRecord } from '../redux/slices/pricingSlice';
+import { selectPricingRecords, setSelectedRecord, deletePricingRecord } from '../redux/slices/pricingSlice';
 import EditModal from './EditModal';
 
 const PricingTable = () => {
