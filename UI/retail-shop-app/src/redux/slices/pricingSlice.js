@@ -25,6 +25,14 @@ export const updatePricingRecord = createAsyncThunk(
   }
 );
 
+export const deletePricingRecord = createAsyncThunk(
+  'pricing/deletePricingRecord',
+  async (id) => {
+    await api.delete(`/pricing/${id}`);
+    return id;
+  }
+);
+
 const pricingSlice = createSlice({
   name: 'pricing',
   initialState: {
@@ -59,6 +67,9 @@ const pricingSlice = createSlice({
         if (index !== -1) {
           state.records[index] = action.payload;
         }
+      })
+      .addCase(deletePricingRecord.fulfilled, (state, action) => {
+        state.records = state.records.filter((record) => record.id !== action.payload);
       });
   },
 });

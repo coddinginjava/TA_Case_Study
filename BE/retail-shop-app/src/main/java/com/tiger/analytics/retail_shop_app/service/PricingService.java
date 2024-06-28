@@ -48,4 +48,8 @@ public class PricingService {
         }
         return pricingRepository.findBySkuContainingIgnoreCaseOrProductNameContainingIgnoreCase(search, search);
     }
+
+    public void deletePricingRecord(Long id) {
+        pricingRepository.deleteById(id);
+    }
 }

@@ -16,7 +16,7 @@ const SearchForm = () => {
   }, [])
 
   return (
-    <Stack direction="row" spacing={4} align="center">
+    <Stack direction="row" spacing={4} align="center" style={{ marginTop: '20px' }}>
       <Input
         placeholder="Search by SKU or Product Name"
         value={searchTerm}

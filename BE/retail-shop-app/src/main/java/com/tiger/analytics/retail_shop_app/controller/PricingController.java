@@ -30,4 +30,9 @@ public class PricingController {
     public List<PricingRecord> searchPricingRecords(@RequestParam(required = false) String search) {
         return pricingService.searchPricingRecords(search);
     }
+
+    @DeleteMapping("/{id}")
+    public void deletePricingRecord(@PathVariable Long id) {
+        pricingService.deletePricingRecord(id);
+    }
 }
